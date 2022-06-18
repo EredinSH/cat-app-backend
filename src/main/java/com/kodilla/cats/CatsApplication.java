@@ -7,6 +7,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 public class CatsApplication {
 
     public static void main(String[] args) {
+
         SpringApplication.run(CatsApplication.class, args);
     }
 
