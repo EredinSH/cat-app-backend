@@ -1,7 +1,7 @@
 package com.kodilla.cats.controller;
 
-import com.kodilla.cats.domain.GoogleSearchDto;
-import com.kodilla.cats.google.client.GoogleClient;
+import com.kodilla.cats.domain.WebToPdfDto;
+import com.kodilla.cats.webpdf.client.WebToPdfClient;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.CrossOrigin;
@@ -12,16 +12,16 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-@RequestMapping("v1/google")
+@RequestMapping("v1/pdf")
 @RequiredArgsConstructor
 @CrossOrigin("*")
-public class GoogleController {
+public class WebToPdfController {
 
-    private final GoogleClient googleClient;
+    private final WebToPdfClient webToPdfClient;
 
-    @GetMapping("search")
-    public ResponseEntity<List<GoogleSearchDto>> getGoogleSearch(String name) {
-        return ResponseEntity.ok(googleClient.getGoogleSearch(name));
+    @GetMapping("pdf")
+    public ResponseEntity<List<WebToPdfDto>> getWebToPdf(String name) {
+        return ResponseEntity.ok(webToPdfClient.getWebToPdf(name));
     }
 
 }

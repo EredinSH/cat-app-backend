@@ -6,9 +6,12 @@ import lombok.Data;
 
 @Data
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class GoogleSearchDto {
+public class WebToPdfDto {
 
-    @JsonProperty("link")
-    private String link;
+    @JsonProperty("requested_url")
+    private String requested_url;
+
+    @JsonProperty("pdf_url")
+    private String pdf_url;
 
 }
