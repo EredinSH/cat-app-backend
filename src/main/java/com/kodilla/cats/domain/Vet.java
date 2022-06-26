@@ -18,8 +18,10 @@ public class Vet {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "location")
     private String location;
 

@@ -28,4 +28,8 @@ public class DbInformationService {
         return repository.save(information);
     }
 
+    public void deleteById(final Long informationId) throws InformationNotFoundException {
+        repository.deleteById(informationId);
+    }
+
 }

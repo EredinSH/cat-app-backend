@@ -28,4 +28,8 @@ public class DbVetService {
         return vetRepository.save(vet);
     }
 
+    public void deleteById(final Long vetId) throws VetNotFoundException {
+        vetRepository.deleteById(vetId);
+    }
+
 }

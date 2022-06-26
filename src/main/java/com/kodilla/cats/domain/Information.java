@@ -18,8 +18,10 @@ public class Information {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column(name = "category")
     private String category;
+
     @Column(name = "content")
     private String content;
 

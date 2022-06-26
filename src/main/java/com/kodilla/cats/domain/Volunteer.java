@@ -18,10 +18,13 @@ public class Volunteer {
     @Id
     @GeneratedValue
     private Long id;
+
     @Column(name = "name")
     private String name;
+
     @Column(name = "age")
     private String age;
+
     @Column(name = "description")
     private String description;
 

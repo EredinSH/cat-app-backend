@@ -19,4 +19,7 @@ public interface VetRepository extends CrudRepository<Vet,Long>  {
     @Override
     Optional<Vet> findById(Long id);
 
+    @Override
+    void deleteById(Long id);
+
 }

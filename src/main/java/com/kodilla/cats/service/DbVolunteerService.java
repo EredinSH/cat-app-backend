@@ -28,4 +28,7 @@ public class DbVolunteerService {
         return repository.save(volunteer);
     }
 
+    public void deleteById(final Long volunteerId) throws VolunteerNotFoundException {
+        repository.deleteById(volunteerId);
+    }
 }

@@ -28,7 +28,7 @@ public class DbCatService {
         return catRepository.save(cat);
     }
 
-    public void deleteById(final Long taskId) throws CatNotFoundException {
-        catRepository.deleteById(taskId);
+    public void deleteById(final Long catId) throws CatNotFoundException {
+        catRepository.deleteById(catId);
     }
 }

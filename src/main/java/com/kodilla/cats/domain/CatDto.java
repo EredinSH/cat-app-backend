@@ -8,7 +8,6 @@ import lombok.ToString;
 @Getter
 @AllArgsConstructor
 @NoArgsConstructor
-@ToString
 public class CatDto {
 
     private Long id;

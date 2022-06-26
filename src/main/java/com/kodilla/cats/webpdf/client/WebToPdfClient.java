@@ -33,7 +33,7 @@ public class WebToPdfClient {
                     .map(Arrays::asList)
                     .orElse(Collections.emptyList())
                     .stream()
-                    .filter(p -> Objects.nonNull(p.getRequested_url()) && Objects.nonNull(p.getPdf_url()))
+                    .filter(p -> Objects.nonNull(p.getRequestedUrl()) && Objects.nonNull(p.getPdfUrl()))
                     .collect(Collectors.toList());
         } catch (RestClientException e) {
             LOGGER.error(e.getMessage(), e);

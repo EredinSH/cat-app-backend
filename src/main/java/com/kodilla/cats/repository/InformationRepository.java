@@ -19,4 +19,7 @@ public interface InformationRepository extends CrudRepository<Information,Long> 
     @Override
     Optional<Information> findById(Long id);
 
+    @Override
+    void deleteById(Long id);
+
 }

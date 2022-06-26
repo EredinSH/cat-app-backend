@@ -52,7 +52,8 @@ public class VetController {
     }
 
     @DeleteMapping(value = "{vetId}")
-    public ResponseEntity<Void> deleteVet(Long vetId) {
+    public ResponseEntity<Void> deleteVet(Long vetId) throws VetNotFoundException {
+        service.deleteById(vetId);
         return ResponseEntity.ok().build();
     }
 

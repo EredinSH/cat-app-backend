@@ -26,7 +26,10 @@ public class GoogleClient {
     private final GoogleSearchConfig googleSearchConfig;
 
     public List<GoogleSearchDto> getGoogleSearch(String name) {
-        URI url = getGoogleSearchUri(name);
+        URI url = UriComponentsBuilder.fromHttpUrl(googleSearchConfig.getGoogleApiEndpoint())
+                .queryParam("q",name)
+                .queryParam("apikey",googleSearchConfig.getGoogleKey())
+                .build().encode().toUri();
 
         try {
             GoogleSearchDto[] searchResult = restTemplate.getForObject(url,GoogleSearchDto[].class);
@@ -40,13 +43,6 @@ public class GoogleClient {
             LOGGER.error(e.getMessage(), e);
             return Collections.emptyList();
         }
-    }
-
-    private URI getGoogleSearchUri(String name) {
-        return UriComponentsBuilder.fromHttpUrl(googleSearchConfig.getGoogleApiEndpoint())
-                .queryParam("q",name)
-                .queryParam("apikey",googleSearchConfig.getGoogleKey())
-                .build().encode().toUri();
     }
 
 }

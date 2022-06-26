@@ -52,7 +52,8 @@ public class InformationController {
     }
 
     @DeleteMapping(value = "{informationId}")
-    public ResponseEntity<Void> deleteInformation(Long informationId) {
+    public ResponseEntity<Void> deleteInformation(Long informationId) throws InformationNotFoundException {
+        service.deleteById(informationId);
         return ResponseEntity.ok().build();
     }
 

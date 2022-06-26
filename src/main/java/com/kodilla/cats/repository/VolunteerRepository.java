@@ -19,4 +19,7 @@ public interface VolunteerRepository extends CrudRepository<Volunteer,Long>  {
     @Override
     Optional<Volunteer> findById(Long id);
 
+    @Override
+    void deleteById(Long id);
+
 }

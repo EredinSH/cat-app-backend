@@ -4,15 +4,11 @@ package com.kodilla.cats.controller;
 import com.kodilla.cats.domain.Volunteer;
 import com.kodilla.cats.domain.VolunteerDto;
 import com.kodilla.cats.mapper.VolunteerMapper;
-import com.kodilla.cats.repository.VolunteerRepository;
 import com.kodilla.cats.service.DbVolunteerService;
-import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
-import java.util.ArrayList;
 import java.util.List;
 
 @RestController
@@ -54,7 +50,8 @@ public class VolunteerController {
     }
 
     @DeleteMapping(value = "{volunteerId}")
-    public ResponseEntity<Void> deleteVolunteer(Long volunteerId) {
+    public ResponseEntity<Void> deleteVolunteer(Long volunteerId) throws VolunteerNotFoundException {
+        service.deleteById(volunteerId);
         return ResponseEntity.ok().build();
     }
 
