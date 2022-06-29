@@ -1,7 +1,7 @@
 package com.kodilla.cats.webpdf.client;
 
 import com.kodilla.cats.config.WebToPdfConfig;
-import com.kodilla.cats.domain.GoogleSearchDto;
+
 import com.kodilla.cats.domain.WebToPdfDto;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;

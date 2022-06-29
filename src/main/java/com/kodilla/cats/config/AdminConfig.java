@@ -11,4 +11,7 @@ public class AdminConfig {
     @Value("${spring.mail.username}")
     private String adminMail;
 
+    @Value("${spring.mail.password}")
+    private  String adminPassword;
+
 }
